@@ -10,18 +10,18 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <PageWrapper>
-          <Route
-            path="/about"
-            component={About}
-          />
+        <PageWrapper />
+        <Route
+          path="/about"
+          component={About}
+        />
 
-          <Route
-            exact={true}
-            path="/"
-            component={Home}
-          />
-        </PageWrapper>
+        <Route
+          exact={true}
+          path="/"
+          component={Home}
+        />
+
       </Router >
     )
   }

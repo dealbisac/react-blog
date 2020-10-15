@@ -12,7 +12,6 @@ class Header extends Component {
                         className="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
                         to={this.props.link}>{this.props.buttonText}</Link>
                     }
-
                 </div>
             </header>
         )
