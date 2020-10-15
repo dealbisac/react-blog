@@ -1,49 +1,35 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import TeamMember from '../Common/TeamMember';
+
+// Team Member Image
+import member1 from '../assets/img/team/1.jpg';
+import member2 from '../assets/img/team/2.jpg';
+import member3 from '../assets/img/team/3.jpg';
+
+const members = [
+    { image: member1, name: 'Millie Brown', job: 'Lead Designer', twitter: '#', facebook: '#', linkedin: '#' },
+    { image: member2, name: 'Dipendra Bdr. Chand', job: 'Lead Developer', twitter: 'https://twitter.com/DipendraBdChand', facebook: 'https://www.facebook.com/dipendrabdrchand/', linkedin: 'https://www.linkedin.com/in/dealbisac/' },
+    { image: member3, name: 'Diana Petersen', job: 'Lead Marketer', twitter: '#', facebook: 'https://www.facebook.com/dipendrabdrchand/', linkedin: 'https://www.linkedin.com/in/dealbisac/' }
+]
 
 class Team extends Component {
     render() {
         return (
             <div>
-                <section class="page-section bg-light" id="team">
-                    <div class="container">
-                        <div class="text-center">
-                            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <section className="page-section bg-light" id="team">
+                    <div className="container">
+                        <div className="text-center">
+                            <h2 className="section-heading text-uppercase">Our Amazing Team</h2>
+                            <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="assets/img/team/1.jpg" alt="" />
-                                    <h4>Kay Garland</h4>
-                                    <p class="text-muted">Lead Designer</p>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="assets/img/team/2.jpg" alt="" />
-                                    <h4>Larry Parker</h4>
-                                    <p class="text-muted">Lead Marketer</p>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="team-member">
-                                    <img class="mx-auto rounded-circle" src="assets/img/team/3.jpg" alt="" />
-                                    <h4>Diana Petersen</h4>
-                                    <p class="text-muted">Lead Developer</p>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
-                            </div>
+                        <div className="row">
+                            {members.map((member, index) => {
+                                return <TeamMember {...member} key={index} />
+                            })}
                         </div>
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+
+                        <div className="row">
+                            <div className="col-lg-8 mx-auto text-center"><p className="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
                         </div>
                     </div>
                 </section>

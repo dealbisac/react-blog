@@ -6,9 +6,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Home from './components/Pages/Home';
 import About from './components/Pages/About';
 import Services from './components/Common/Services';
-import Portfolio from './components/Common/Portfolio';
+import Portfolio from './components/Pages/Portfolio';
 import Footer from './components/Common/Footer';
 import Contact from './components/Pages/Contact';
+import Team from './components/Pages/Team';
 
 class App extends Component {
   render() {
@@ -28,6 +29,11 @@ class App extends Component {
         <Route
           path="/about"
           component={About}
+        />
+
+        <Route
+          path="/team"
+          component={Team}
         />
 
         <Route

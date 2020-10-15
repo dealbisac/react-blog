@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PortfolioItem from './PortfolioItem';
+import PortfolioItem from '../Common/PortfolioItem';
 
 // Images for the Portfolio
 import img1 from '../assets/img/portfolio/01-thumbnail.jpg';
@@ -36,7 +36,6 @@ class Portfolio extends Component {
                         </div>
                     </div>
                 </section>
-
             </div>
         )
     }
