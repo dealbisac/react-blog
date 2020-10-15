@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from '../Common/Header';
+import image from '../assets/img/header-bg.jpg';
 
 class Home extends Component {
     render() {
@@ -11,8 +12,7 @@ class Home extends Component {
                     buttonText="Tell me more"
                     link="/services"
                     showButton={true}
-                    image={process.env.PUBLIC_URL + '/assets/img/header-bg.jpg'}
-
+                    image={image}
                 />
             </div>
         )

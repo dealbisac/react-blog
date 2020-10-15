@@ -17,12 +17,12 @@ class App extends Component {
           />
 
           <Route
+            exact={true}
             path="/"
             component={Home}
           />
-
         </PageWrapper>
-      </Router>
+      </Router >
     )
   }
 }
