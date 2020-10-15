@@ -4,8 +4,9 @@ import image from '../assets/img/header-bg.jpg';
 
 //Reusable Components
 import Services from '../Common/Services';
-import PortfolioItem from '../Common/PortfolioItem';
 import Portfolio from '../Common/Portfolio';
+import Contact from './Contact';
+import Clients from '../Common/Clients';
 
 class Home extends Component {
     render() {
@@ -22,10 +23,10 @@ class Home extends Component {
 
                 <Services />
                 <Portfolio />
+                <Clients />
             </div>
         )
     }
 }
-
 
 export default Home;

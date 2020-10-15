@@ -5,6 +5,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 // Pages Import
 import Home from './components/Pages/Home';
 import About from './components/Pages/About';
+import Services from './components/Common/Services';
+import Portfolio from './components/Common/Portfolio';
+import Footer from './components/Common/Footer';
+import Contact from './components/Pages/Contact';
 
 class App extends Component {
   render() {
@@ -12,8 +16,23 @@ class App extends Component {
       <Router>
         <PageWrapper />
         <Route
+          path="/services"
+          component={Services}
+        />
+
+        <Route
+          path="/portfolio"
+          component={Portfolio}
+        />
+
+        <Route
           path="/about"
           component={About}
+        />
+
+        <Route
+          path="/contact"
+          component={Contact}
         />
 
         <Route
@@ -22,7 +41,9 @@ class App extends Component {
           component={Home}
         />
 
+        <Footer />
       </Router >
+
     )
   }
 }

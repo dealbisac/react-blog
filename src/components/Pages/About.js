@@ -11,8 +11,6 @@ class About extends Component {
                     subtitle="It's great to tell a story"
                     showButton={false}
                     image={image}
-                // image={process.env.PUBLIC_URL + '/assets/img/aboutus.jpg'}
-
                 />
 
                 <section className="page-section" id="about">
