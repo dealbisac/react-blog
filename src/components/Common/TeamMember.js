@@ -8,9 +8,9 @@ class TeamMember extends Component {
                     <img className="mx-auto rounded-circle" src={this.props.image} alt="" />
                     <h4>{this.props.name}</h4>
                     <p className="text-muted">{this.props.job}</p>
-                    <a className="btn btn-dark btn-social mx-2" href={this.props.twitter} target="_blank"><i className="fab fa-twitter"></i></a>
-                    <a className="btn btn-dark btn-social mx-2" href={this.props.facebook} target="_blank"><i className="fab fa-facebook-f"></i></a>
-                    <a className="btn btn-dark btn-social mx-2" href={this.props.linkedin} target="_blank"><i className="fab fa-linkedin-in"></i></a>
+                    <a className="btn btn-dark btn-social mx-2" href={this.props.twitter} target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i></a>
+                    <a className="btn btn-dark btn-social mx-2" href={this.props.facebook} target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook-f"></i></a>
+                    <a className="btn btn-dark btn-social mx-2" href={this.props.linkedin} target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         )
