@@ -3,6 +3,7 @@ import Header from '../Common/Header';
 import image from '../assets/img/header-bg.jpg';
 import Field from '../Common/Field';
 import { withFormik } from 'formik';
+import * as Yup from 'yup';
 
 const fields = {
     sections: [
@@ -20,7 +21,6 @@ const fields = {
 
 
 class Contact extends Component {
-
     render() {
         return (
             <div>
@@ -34,12 +34,12 @@ class Contact extends Component {
                 <section className="page-section" id="contact">
                     <div className="container">
                         <div className="row">
-                            <div className="text-center">
+                            <div className="col-lg-12 text-center">
                                 <h2 className="section-heading text-uppercase">Contact Us</h2>
                                 <h3 className="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                             </div>
                         </div>
-                        <form id="contactForm" onSubmit={this.props.handleSubmit} name="sentMessage" novalidate="novalidate">
+                        <form onSubmit={this.props.handleSubmit} name="sentMessage" novalidate="novalidate">
                             <div className="row align-items-stretch mb-5">
                                 {fields.sections.map((section, sectionIndex) => {
                                     // console.log("Rendering Section", sectionIndex, "with", section);
@@ -63,7 +63,7 @@ class Contact extends Component {
                                 <div className="clearfix"></div>
                                 <div className="col-lg-12 text-center">
                                     <div id="success"></div>
-                                    <button className="btn btn-primary btn-xl text-uppercase" id="sendMessageB utton" type="submit">Send Message</button>
+                                    <button className="btn btn-primary btn-xl text-uppercase" type="submit">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -74,7 +74,6 @@ class Contact extends Component {
     }
 }
 
-
 export default withFormik({
     mapPropsToValues: () => ({
         name: '',
@@ -82,18 +81,20 @@ export default withFormik({
         phone: '',
         message: '',
     }),
-    validate: values => {
-        const errors = {};
+    validationSchema: Yup.object().shape({
+        name: Yup.string().required('You must provide name.').min(3, 'Please provide your real name.'),
+        email: Yup.string().email('You need to provide valid email.').required('You must provide email.'),
+        phone: Yup.string()
+            .min(10, 'Please provide your 10 digit number.')
+            .max(15, 'Your phone number is too long')
+            .required('You must provide your phone.'),
+        message: Yup.string()
+            .min(500, 'You need provide us more detailed information')
+            .required('Your message is required.')
 
-        Object.keys(values).map(v => {
-            if (!values[v]) {
-                errors[v] = "Required";
-            }
-            return errors;
-        })
-    },
+    }),
     handleSubmit: (values, { setSubmitting }) => {
-        console.log("VALUES", values);
+        // console.log("VALUES", values);
         alert("You have successfully submitted the form", JSON.stringify(values));
     }
 })(Contact);
