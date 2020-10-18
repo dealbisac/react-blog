@@ -89,7 +89,7 @@ export default withFormik({
             .max(15, 'Your phone number is too long')
             .required('You must provide your phone.'),
         message: Yup.string()
-            .min(500, 'You need provide us more detailed information')
+            .min(20, 'You need provide us more detailed information')
             .required('Your message is required.')
 
     }),
